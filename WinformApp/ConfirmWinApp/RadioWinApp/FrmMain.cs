@@ -38,16 +38,16 @@ namespace RadioWinApp
             else if (RdbChina.Checked) { result = "국적 : 중국\n"; }
             else if (RdbJapan.Checked) { result = "국적 : 일본\n"; }
             else if (RdbOthers.Checked) { result = "국적 : 그 외 국가\n"; }
-            else
-            /*{
+            /*else
+            {
                 MessageBox.Show("국가를 선택하세요");
                 return;
             }*/
 
             if (RdbMale.Checked) result += "성별 : 남자";
             else if (RdbFemale.Checked) result += "성별 : 여자";
-            else
-            /*{
+            /*else
+            {
                 MessageBox.Show("성별을 선택하세요");
                 return;
             }*/
