@@ -93,6 +93,7 @@ namespace ColorChangerApp
             this.TxtRed.TabIndex = 7;
             this.TxtRed.Text = "0";
             this.TxtRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtRed.TextChanged += new System.EventHandler(this.Textbox_TextChanged);
             // 
             // TxtGreen
             // 
@@ -102,6 +103,7 @@ namespace ColorChangerApp
             this.TxtGreen.TabIndex = 8;
             this.TxtGreen.Text = "0";
             this.TxtGreen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtGreen.TextChanged += new System.EventHandler(this.Textbox_TextChanged);
             // 
             // TxtBlue
             // 
@@ -111,6 +113,7 @@ namespace ColorChangerApp
             this.TxtBlue.TabIndex = 9;
             this.TxtBlue.Text = "0";
             this.TxtBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBlue.TextChanged += new System.EventHandler(this.Textbox_TextChanged);
             // 
             // BtnColor
             // 

@@ -47,5 +47,17 @@ namespace ColorChangerApp
             TxtGreen.Text = TrbGreen.Value.ToString();
             TxtBlue.Text = TrbBlue.Value.ToString();
         }
+
+        private void Textbox_TextChanged(object sender, EventArgs e)
+        {
+            int.TryParse(TxtRed.Text, out int resultR);
+            TrbRed.Value = resultR;
+            int.TryParse(TxtGreen.Text, out int resultG);
+            TrbGreen.Value = resultG;
+            int.TryParse(TxtBlue.Text, out int resultB);
+            TrbBlue.Value = resultB;
+
+            PnlResult.BackColor = Color.FromArgb(TrbRed.Value, TrbGreen.Value, TrbBlue.Value);
+        }
     }
 }
