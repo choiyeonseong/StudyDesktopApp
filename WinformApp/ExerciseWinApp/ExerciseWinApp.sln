@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListboxWinApp", "ListboxWinApp\ListboxWinApp.csproj", "{8D3A7DD1-A4C5-4BF4-B101-315C8019DE20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantSellApp", "RestaurantSellApp\RestaurantSellApp.csproj", "{D129A715-66D7-4C36-B43C-471832E364BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreCalcApp", "ScoreCalcApp\ScoreCalcApp.csproj", "{B3C912AD-5860-4200-89C3-4748B1C86CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelWishApp", "TravelWishApp\TravelWishApp.csproj", "{CCE7976A-2C04-4D5B-B8EF-48B48312D0AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeCalcApp", "GradeCalcApp\GradeCalcApp.csproj", "{00726EA8-0799-410A-9C79-8AA474B8878A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListViewApp", "ListViewApp\ListViewApp.csproj", "{0FB0210D-8AF0-4DD7-83A3-8779CF7C8BF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D3A7DD1-A4C5-4BF4-B101-315C8019DE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3A7DD1-A4C5-4BF4-B101-315C8019DE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3A7DD1-A4C5-4BF4-B101-315C8019DE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3A7DD1-A4C5-4BF4-B101-315C8019DE20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D129A715-66D7-4C36-B43C-471832E364BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D129A715-66D7-4C36-B43C-471832E364BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D129A715-66D7-4C36-B43C-471832E364BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D129A715-66D7-4C36-B43C-471832E364BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C912AD-5860-4200-89C3-4748B1C86CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C912AD-5860-4200-89C3-4748B1C86CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C912AD-5860-4200-89C3-4748B1C86CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C912AD-5860-4200-89C3-4748B1C86CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE7976A-2C04-4D5B-B8EF-48B48312D0AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE7976A-2C04-4D5B-B8EF-48B48312D0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE7976A-2C04-4D5B-B8EF-48B48312D0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE7976A-2C04-4D5B-B8EF-48B48312D0AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00726EA8-0799-410A-9C79-8AA474B8878A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00726EA8-0799-410A-9C79-8AA474B8878A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00726EA8-0799-410A-9C79-8AA474B8878A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00726EA8-0799-410A-9C79-8AA474B8878A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB0210D-8AF0-4DD7-83A3-8779CF7C8BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB0210D-8AF0-4DD7-83A3-8779CF7C8BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB0210D-8AF0-4DD7-83A3-8779CF7C8BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB0210D-8AF0-4DD7-83A3-8779CF7C8BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17621D2F-418C-4ECC-A1BB-64A62AF036B1}
+	EndGlobalSection
+EndGlobal
