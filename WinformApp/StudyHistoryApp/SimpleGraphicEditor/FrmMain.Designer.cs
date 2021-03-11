@@ -127,6 +127,9 @@ namespace SimpleGraphicEditor
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "그래픽 에디터";
             this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseUp);
             this.TlbMain.ResumeLayout(false);
             this.TlbMain.PerformLayout();
             this.StsMain.ResumeLayout(false);

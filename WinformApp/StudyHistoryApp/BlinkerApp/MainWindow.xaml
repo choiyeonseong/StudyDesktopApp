@@ -1,0 +1,26 @@
+﻿<Window x:Class="BlinkerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlinkerApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="450" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BtnStart"   Grid.Column="0" Background="Red"  Margin="30,20" Click="BtnStart_Click"/>
+        <Button x:Name="BtnStop"    Grid.Column="1" Background="Green"    Margin="30,20" Click="BtnStop_Click"/>
+        <Label Grid.Column="0" Grid.Row="1" 
+               Content="Start Blinking!"    FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="1" Grid.Row="1" 
+               Content="Stop Blinking!"     FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
