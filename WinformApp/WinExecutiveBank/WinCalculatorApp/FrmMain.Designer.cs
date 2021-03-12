@@ -99,6 +99,7 @@ namespace WinCalculatorApp
             this.BtnCE.TabIndex = 2;
             this.BtnCE.Text = "CE";
             this.BtnCE.UseVisualStyleBackColor = false;
+            this.BtnCE.Click += new System.EventHandler(this.BtnCE_Click);
             // 
             // BtnMR
             // 
@@ -163,6 +164,7 @@ namespace WinCalculatorApp
             this.BtnPercent.TabIndex = 1;
             this.BtnPercent.Text = "%";
             this.BtnPercent.UseVisualStyleBackColor = true;
+            this.BtnPercent.Click += new System.EventHandler(this.BtnPercent_Click);
             // 
             // BtnSqrt
             // 
@@ -175,6 +177,7 @@ namespace WinCalculatorApp
             this.BtnSqrt.TabIndex = 1;
             this.BtnSqrt.Text = "√";
             this.BtnSqrt.UseVisualStyleBackColor = true;
+            this.BtnSqrt.Click += new System.EventHandler(this.BtnSqrt_Click);
             // 
             // BtnSqr
             // 
@@ -187,6 +190,7 @@ namespace WinCalculatorApp
             this.BtnSqr.TabIndex = 1;
             this.BtnSqr.Text = "x²";
             this.BtnSqr.UseVisualStyleBackColor = true;
+            this.BtnSqr.Click += new System.EventHandler(this.BtnSqr_Click);
             // 
             // BtnRecip
             // 
@@ -199,6 +203,7 @@ namespace WinCalculatorApp
             this.BtnRecip.TabIndex = 1;
             this.BtnRecip.Text = "1/x";
             this.BtnRecip.UseVisualStyleBackColor = true;
+            this.BtnRecip.Click += new System.EventHandler(this.BtnRecip_Click);
             // 
             // BtnC
             // 
@@ -228,6 +233,7 @@ namespace WinCalculatorApp
             this.BtnDelete.TabIndex = 2;
             this.BtnDelete.Text = "⌫";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnDivide
             // 
@@ -392,6 +398,7 @@ namespace WinCalculatorApp
             this.BtnDot.TabIndex = 4;
             this.BtnDot.Text = ".";
             this.BtnDot.UseVisualStyleBackColor = false;
+            this.BtnDot.Click += new System.EventHandler(this.BtnDot_Click);
             // 
             // BtnPlus
             // 
@@ -466,6 +473,7 @@ namespace WinCalculatorApp
             this.BtnSign.TabIndex = 9;
             this.BtnSign.Text = "±";
             this.BtnSign.UseVisualStyleBackColor = false;
+            this.BtnSign.Click += new System.EventHandler(this.BtnSign_Click);
             // 
             // Btn1
             // 

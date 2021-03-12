@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCalculatorApp", "WpfCalculatorApp\WpfCalculatorApp.csproj", "{DEFB42BF-1073-411D-9433-AC50A7EAFB72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalogClockApp", "AnalogClockApp\AnalogClockApp.csproj", "{8BB780E0-B2F6-4440-AC98-70A57C89CCF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteCarloPIApp", "MonteCarloPIApp\MonteCarloPIApp.csproj", "{CCA1650A-D5AC-40F8-8E27-9292A9D6DDAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DEFB42BF-1073-411D-9433-AC50A7EAFB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEFB42BF-1073-411D-9433-AC50A7EAFB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEFB42BF-1073-411D-9433-AC50A7EAFB72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB780E0-B2F6-4440-AC98-70A57C89CCF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB780E0-B2F6-4440-AC98-70A57C89CCF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB780E0-B2F6-4440-AC98-70A57C89CCF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB780E0-B2F6-4440-AC98-70A57C89CCF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA1650A-D5AC-40F8-8E27-9292A9D6DDAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA1650A-D5AC-40F8-8E27-9292A9D6DDAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA1650A-D5AC-40F8-8E27-9292A9D6DDAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA1650A-D5AC-40F8-8E27-9292A9D6DDAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
