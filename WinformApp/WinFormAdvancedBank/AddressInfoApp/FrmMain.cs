@@ -65,7 +65,7 @@ namespace AddressInfoApp
                 return;
             }
 
-            // TODO : 중복데이터 추가 방지
+            // 중복데이터 추가 방지
             int.TryParse(TxtIdx.Text, out int result);
             if (result > 0)
             {
@@ -153,26 +153,30 @@ namespace AddressInfoApp
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connString))
+            // 삭제하시겠습니까? 메세지 박스
+            if (MessageBox.Show("삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
             {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
-
-                string query = $"DELETE FROM Address WHERE Idx = {result}";
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                if (cmd.ExecuteNonQuery() == 1)
+                using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    // TODO : 삭제하시겠습니까? 메세지 박스
-                    MessageBox.Show("삭제 성공!");
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+
+                    string query = $"DELETE FROM Address WHERE Idx = {result}";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("삭제 성공!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("삭제 실패!");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("삭제 실패!");
-                }
+                RefreshData();
+                ClearInput();
             }
-            RefreshData();
-            ClearInput();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
