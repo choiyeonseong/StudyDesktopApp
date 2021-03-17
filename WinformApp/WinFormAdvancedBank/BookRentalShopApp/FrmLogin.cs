@@ -36,7 +36,7 @@ namespace BookRentalShopApp
                     var query = "SELECT userID FROM membertbl " +
                                 " WHERE userID = @userID " +
                                 "   AND passwords = @passwords " +
-                                "   AND levels = 's' ";       // @ : 파라미터 속성
+                                "   AND levels = 'S' ";       // @ : 파라미터 속성
 
                     // sqlCommand 생성
                     SqlCommand cmd = new SqlCommand(query, conn);
@@ -57,6 +57,8 @@ namespace BookRentalShopApp
                     reader.Read();
                     strUserId = reader["userID"] != null ? reader["userID"].ToString() : "";    // null이 아니면 값을 입력
 
+                    reader.Close(); // **로그인 정보 처리 위해서 이전 reader는 닫아줘야함
+
                     // 중간점검
                     //MessageBox.Show(strUserId);
 
@@ -67,15 +69,28 @@ namespace BookRentalShopApp
                     }
                     else
                     {
+                        // **로그인 정보 남기기
+                        var updateQuery = $@"UPDATE membertbl SET 
+                                               lastLoginDt = GETDATE() 
+                                             , loginIpAddr = '{Helper.Common.GetLocalIp()}' 
+                                            WHERE userId = '{strUserId}' ";
+                        cmd.CommandText = updateQuery;
+                        cmd.ExecuteNonQuery();
                         MetroMessageBox.Show(this, "접속성공", "로그인성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
             }
+            catch(InvalidOperationException)
+            {
+                MetroMessageBox.Show(this, $"ID나 Password를 틀렸습니다.", "실패",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             catch (Exception ex)
             {
                 MetroMessageBox.Show(this, $"Error : {ex.Message}", "오류",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error, Height);
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

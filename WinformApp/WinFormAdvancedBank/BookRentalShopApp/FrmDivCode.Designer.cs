@@ -69,9 +69,9 @@ namespace BookRentalShopApp
             this.GrbDetail.Controls.Add(this.TxtDivision);
             this.GrbDetail.Controls.Add(this.metroLabel2);
             this.GrbDetail.Controls.Add(this.metroLabel1);
-            this.GrbDetail.Location = new System.Drawing.Point(450, 77);
+            this.GrbDetail.Location = new System.Drawing.Point(450, 75);
             this.GrbDetail.Name = "GrbDetail";
-            this.GrbDetail.Size = new System.Drawing.Size(333, 349);
+            this.GrbDetail.Size = new System.Drawing.Size(333, 352);
             this.GrbDetail.TabIndex = 1;
             this.GrbDetail.TabStop = false;
             this.GrbDetail.Text = "상세";
@@ -79,7 +79,7 @@ namespace BookRentalShopApp
             // BtnSave
             // 
             this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSave.Location = new System.Drawing.Point(243, 299);
+            this.BtnSave.Location = new System.Drawing.Point(243, 302);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 33);
             this.BtnSave.TabIndex = 6;
@@ -90,7 +90,7 @@ namespace BookRentalShopApp
             // BtnNew
             // 
             this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnNew.Location = new System.Drawing.Point(162, 299);
+            this.BtnNew.Location = new System.Drawing.Point(162, 302);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(75, 33);
             this.BtnNew.TabIndex = 5;
@@ -101,7 +101,7 @@ namespace BookRentalShopApp
             // BtnDelete
             // 
             this.BtnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnDelete.Location = new System.Drawing.Point(81, 299);
+            this.BtnDelete.Location = new System.Drawing.Point(81, 302);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(75, 33);
             this.BtnDelete.TabIndex = 4;

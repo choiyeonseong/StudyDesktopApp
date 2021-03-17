@@ -23,17 +23,6 @@ namespace BookRentalShopApp
             Environment.Exit(0);
         }
 
-        private void MnuDivCode_Click(object sender, EventArgs e)
-        {
-            FrmDivCode frm = new FrmDivCode();
-            frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;   // this = FrmMain
-            frm.Show();
-            frm.Width = this.ClientSize.Width - 10;
-            frm.Height = this.Height - menuStrip1.Height;
-            frm.WindowState = FormWindowState.Maximized;
-        }
-
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e) // 사용자 편의를 위해
         {
             if (MetroMessageBox.Show(this, "종료하시겠습니까?", "종료",
@@ -46,6 +35,28 @@ namespace BookRentalShopApp
             {
                 e.Cancel = true;    // 프로그램 종료 안함
             }
+        }
+
+        private void MnuDivCode_Click(object sender, EventArgs e)
+        {
+            FrmDivCode frm = new FrmDivCode();
+            frm.Dock = DockStyle.Fill;
+            frm.MdiParent = this;   // this = FrmMain
+            frm.Show();
+            frm.Width = this.ClientSize.Width - 10;
+            frm.Height = this.Height - menuStrip1.Height;
+            frm.WindowState = FormWindowState.Maximized;
+        }
+
+        private void MnuMember_Click(object sender, EventArgs e)
+        {
+            FrmMember frm = new FrmMember();
+            frm.Dock = DockStyle.Fill;
+            frm.MdiParent = this;   // this = FrmMain
+            frm.Show();
+            frm.Width = this.ClientSize.Width - 10;
+            frm.Height = this.Height - menuStrip1.Height;
+            frm.WindowState = FormWindowState.Maximized;
         }
     }
 }

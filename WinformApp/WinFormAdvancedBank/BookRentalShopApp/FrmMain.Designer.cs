@@ -76,6 +76,7 @@ namespace BookRentalShopApp
             this.MnuMember.Name = "MnuMember";
             this.MnuMember.Size = new System.Drawing.Size(180, 22);
             this.MnuMember.Text = "회원(&P)";
+            this.MnuMember.Click += new System.EventHandler(this.MnuMember_Click);
             // 
             // MnuBooks
             // 
