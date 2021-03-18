@@ -13,7 +13,8 @@ namespace BookRentalShopApp
         }
 
         private void FrmMain_Shown(object sender, EventArgs e)
-        {
+        {   
+            // 로그인 창 생성
             FrmLogin frm = new FrmLogin();
             frm.ShowDialog();
         }
@@ -37,26 +38,47 @@ namespace BookRentalShopApp
             }
         }
 
+        /// <summary>
+        /// MDI Child Form 생성
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="strTitle"></param>
+        private void InitChildForm(Form form, string strTitle)
+        {
+            form.Text = strTitle;
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;   // this = FrmMain
+            form.FormBorderStyle = FormBorderStyle.None;
+
+            // TODO : 사이즈 조절
+            form.Width = 1875;//this.ClientSize.Width - 10;
+            form.Height = 930;//this.Height - menuStrip1.Height;
+
+            form.Show();
+            form.WindowState = FormWindowState.Normal;
+        }
+
         private void MnuDivCode_Click(object sender, EventArgs e)
         {
             FrmDivCode frm = new FrmDivCode();
-            frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;   // this = FrmMain
-            frm.Show();
-            frm.Width = this.ClientSize.Width - 10;
-            frm.Height = this.Height - menuStrip1.Height;
-            frm.WindowState = FormWindowState.Maximized;
+            InitChildForm(frm, "구분코드 관리");
         }
 
         private void MnuMember_Click(object sender, EventArgs e)
         {
             FrmMember frm = new FrmMember();
-            frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;   // this = FrmMain
-            frm.Show();
-            frm.Width = this.ClientSize.Width - 10;
-            frm.Height = this.Height - menuStrip1.Height;
-            frm.WindowState = FormWindowState.Maximized;
+            InitChildForm(frm, "회원 관리");
+        }
+
+        private void MnuBooks_Click(object sender, EventArgs e)
+        {
+            FrmBooks frm = new FrmBooks();
+            InitChildForm(frm, "도서 관리");
+        }
+
+        private void MnuRental_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
