@@ -199,6 +199,7 @@ namespace BookRentalShopApp
             this.Controls.Add(this.GrbDetail);
             this.Controls.Add(this.DgvData);
             this.Name = "FrmDivCode";
+            this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "책 구분코드 관리";
             this.Load += new System.EventHandler(this.FrmDivCode_Load);
             this.Resize += new System.EventHandler(this.FrmDivCode_Resize);

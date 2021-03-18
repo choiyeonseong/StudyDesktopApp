@@ -11,12 +11,18 @@ namespace BookRentalShopApp
         {
             InitializeComponent();
         }
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         private void FrmMain_Shown(object sender, EventArgs e)
         {   
             // 로그인 창 생성
             FrmLogin frm = new FrmLogin();
             frm.ShowDialog();
+
+            LblMyName.Text = $"{frm.MyName} 님 접속";
         }
 
         private void MnuExit_Click(object sender, EventArgs e)
@@ -78,7 +84,9 @@ namespace BookRentalShopApp
 
         private void MnuRental_Click(object sender, EventArgs e)
         {
-
+            FrmRental frm = new FrmRental();
+            InitChildForm(frm, "대여 관리");
         }
+
     }
 }

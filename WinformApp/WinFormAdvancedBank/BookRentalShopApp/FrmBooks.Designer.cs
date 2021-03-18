@@ -428,6 +428,7 @@ namespace BookRentalShopApp
             this.Controls.Add(this.GrbDetail);
             this.Controls.Add(this.DgvData);
             this.Name = "FrmBooks";
+            this.Style = MetroFramework.MetroColorStyle.Magenta;
             this.Text = "도서 관리";
             this.Load += new System.EventHandler(this.FrmDivCode_Load);
             this.Resize += new System.EventHandler(this.FrmDivCode_Resize);

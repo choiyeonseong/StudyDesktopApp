@@ -9,11 +9,13 @@ namespace BookRentalShopApp
 {
     public partial class FrmLogin : MetroForm
     {
+
+        public string MyName = "";
         public FrmLogin()
         {
             InitializeComponent();
         }
-        
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             var strUserId = ""; // select에서 받아와서 처리할 변수
@@ -33,7 +35,7 @@ namespace BookRentalShopApp
                 {
                     if (conn.State == ConnectionState.Closed) conn.Open();
 
-                    var query = "SELECT userID FROM membertbl " +
+                    var query = "SELECT userID, Names FROM membertbl " +
                                 " WHERE userID = @userID " +
                                 "   AND passwords = @passwords " +
                                 "   AND levels = 'S' ";       // @ : 파라미터 속성
@@ -46,6 +48,8 @@ namespace BookRentalShopApp
                     pUserID.Value = TxtUserId.Text;
                     cmd.Parameters.Add(pUserID);    // SqlParameter 개체를 SqlCommand 개체의 Parameters 속성(@)에 할당
 
+
+
                     SqlParameter pPasswords = new SqlParameter("@passwords", SqlDbType.VarChar, 20);
                     pPasswords.Value = TxtPassword.Text;
                     cmd.Parameters.Add(pPasswords); // SqlParameter 개체를 SqlCommand 개체의 Parameters 속성(@)에 할당
@@ -56,13 +60,13 @@ namespace BookRentalShopApp
                     // reader로 처리...
                     reader.Read();
                     strUserId = reader["userID"] != null ? reader["userID"].ToString() : "";    // null이 아니면 값을 입력
-
+                    MyName = reader["Names"] != null ? reader["Names"].ToString() : "";
                     reader.Close(); // **로그인 정보 처리 위해서 이전 reader는 닫아줘야함
 
                     // 중간점검
                     //MessageBox.Show(strUserId);
 
-                    if(string.IsNullOrEmpty(strUserId))
+                    if (string.IsNullOrEmpty(strUserId))
                     {
                         MetroMessageBox.Show(this, "접속실패", "로그인실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -81,7 +85,7 @@ namespace BookRentalShopApp
                     }
                 }
             }
-            catch(InvalidOperationException)
+            catch (InvalidOperationException)
             {
                 MetroMessageBox.Show(this, $"ID나 Password를 틀렸습니다.", "실패",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
