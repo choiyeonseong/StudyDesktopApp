@@ -119,7 +119,8 @@ namespace BookRentalShopApp
                 MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;    // 로드될때 선택된 데이터가 없도록
+
+                DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;    // 로드될때 선택된 데이터가 없도록
         }
         /// <summary>
         /// 데이터 그리드 뷰 새로고침
@@ -258,7 +259,7 @@ namespace BookRentalShopApp
                     cmd.Parameters.Add(pPrice);
 
                     var pDescriptions = new SqlParameter("@Descriptions", SqlDbType.NVarChar);
-                    pDescriptions.Value = TxtDescriptions.Text;
+                    pDescriptions.Value = Helper.Common.ReplaceCmdText(TxtDescriptions.Text);   // 특수문자 방지 메소드 사용 : Sql Injection을 방지하기 위해
                     cmd.Parameters.Add(pDescriptions);
 
                     if (IsNew == false) // UPDATE 일때만 처리

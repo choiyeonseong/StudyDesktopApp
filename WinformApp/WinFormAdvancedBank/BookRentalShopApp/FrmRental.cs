@@ -176,7 +176,7 @@ namespace BookRentalShopApp
 
                     var query = "";
 
-                    if (IsNew == true)
+                    if (IsNew == true)  // INSERT
                     {
                         query = @"INSERT INTO [dbo].[rentaltbl]
                                                ([memberIdx]
@@ -192,9 +192,11 @@ namespace BookRentalShopApp
                     else  // UPDATE
                     {
                         query = @"UPDATE [dbo].[rentaltbl]
-                                    SET [returnDate] = GETDATE()
-                                        ,[rentalState] = 'T'
-                                  WHERE Idx = @idx";
+                                     SET [returnDate] = case @rentalState
+						                                when 'T' then GETDATE()
+						                                when 'R' then NULL END
+                                        ,[rentalState] = @rentalState
+                                   WHERE Idx = @Idx ";
                     }
 
                     cmd.Connection = conn;
@@ -223,6 +225,10 @@ namespace BookRentalShopApp
                         var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
                         pIdx.Value = TxtIdx.Text;
                         cmd.Parameters.Add(pIdx);
+
+                        var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char, 1);
+                        pRentalState.Value = CboRentalState.SelectedValue;
+                        cmd.Parameters.Add(pRentalState);
                     }
 
                     var result = cmd.ExecuteNonQuery();

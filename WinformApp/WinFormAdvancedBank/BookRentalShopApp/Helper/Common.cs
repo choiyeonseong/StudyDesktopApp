@@ -31,5 +31,19 @@ namespace BookRentalShopApp.Helper
 
             return localIP;
         }
+        /// <summary>
+        /// Sql Injection 방지하기 위해
+        /// 특수문자 치환
+        /// </summary>
+        /// <param name="strSource"></param>
+        /// <returns></returns>
+        internal static string ReplaceCmdText(string strSource)
+        {
+            var result = strSource.Replace("'", "＇");   // 홑따옴표를 특수문자로 치환
+            result = result.Replace("--", "");  // --(주석처리) 사용 금지
+            result = result.Replace(";", "");   // ; 사용 금지
+
+            return result;
+        }
     }
 }
