@@ -49,7 +49,6 @@ namespace BookRentalShopApp
             this.DgvData.RowTemplate.Height = 23;
             this.DgvData.Size = new System.Drawing.Size(640, 279);
             this.DgvData.TabIndex = 0;
-            this.DgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellClick);
             // 
             // BtnCancel
             // 
@@ -85,7 +84,6 @@ namespace BookRentalShopApp
             this.Style = MetroFramework.MetroColorStyle.Magenta;
             this.Text = "도서 리스트";
             this.Load += new System.EventHandler(this.FrmDivCode_Load);
-            this.Resize += new System.EventHandler(this.FrmDivCode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
             this.ResumeLayout(false);
 

@@ -94,7 +94,7 @@ namespace BookRentalShopApp
                     SqlCommand cmd = new SqlCommand();
 
                     var query = @"DELETE FROM [dbo].[membertbl]
-                                        WHERE Idx=@Idx";
+                                        WHERE Idx = @Idx ";
 
                     cmd.Connection = conn;
                     cmd.CommandText = query;    // == SqlCommand cmd = new SqlCommand(conn, query);
@@ -123,6 +123,7 @@ namespace BookRentalShopApp
                 MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;    // 로드될때 선택된 데이터가 없도록
         }
         /// <summary>
         /// 데이터 그리드 뷰 새로고침
@@ -148,8 +149,8 @@ namespace BookRentalShopApp
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "membertbl");
 
+                    adapter.Fill(ds, "membertbl");
                     DgvData.DataSource = ds;
                     DgvData.DataMember = "membertbl";
                 }
@@ -175,7 +176,7 @@ namespace BookRentalShopApp
 
                     var query = "";
 
-                    if (IsNew == true)
+                    if (IsNew == true)  // INSERT
                     {
                         query = @"INSERT INTO [dbo].[membertbl]
                                             ( [Names]
@@ -268,6 +269,9 @@ namespace BookRentalShopApp
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        /// <summary>
+        /// 입력 텍스트박스 초기화 
+        /// </summary>
         private void ClearInputs()
         {
             TxtIdx.Text = TxtNames.Text
@@ -287,9 +291,12 @@ namespace BookRentalShopApp
         private bool CheckValidation()
         {
             // Validation(유효성) 체크
-            if (string.IsNullOrEmpty(TxtNames.Text) || string.IsNullOrEmpty(TxtAddr.Text) ||
-                string.IsNullOrEmpty(TxtMobile.Text) || string.IsNullOrEmpty(TxtEmail.Text) ||
-                string.IsNullOrEmpty(TxtUserId.Text) || CboLevels.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(TxtNames.Text) || 
+                string.IsNullOrEmpty(TxtAddr.Text) ||
+                string.IsNullOrEmpty(TxtMobile.Text) || 
+                string.IsNullOrEmpty(TxtEmail.Text) ||
+                string.IsNullOrEmpty(TxtUserId.Text) || 
+                CboLevels.SelectedIndex == -1)
             {
                 MetroMessageBox.Show(this, "빈값은 처리할 수 없습니다.", "경고",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);

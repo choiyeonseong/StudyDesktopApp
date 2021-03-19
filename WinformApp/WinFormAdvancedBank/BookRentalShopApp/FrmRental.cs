@@ -17,8 +17,8 @@ namespace BookRentalShopApp
 
         private int selMemberIdx = 0;   // 선택된 회원 번호
         private string selMemberName = "";  // 선택된 회원 이름
-        private int selBookIdx = 0;
-        private string selBookName = "";
+        private int selBookIdx = 0;     // 선택된 도서 번호
+        private string selBookName = "";    // 선택된 도서 이름
 
         #endregion
 
@@ -54,7 +54,6 @@ namespace BookRentalShopApp
                 DtpRentalDate.Enabled = false;
             }
         }
-
         private void BtnNew_Click(object sender, EventArgs e)
         {
             ClearInputs();
@@ -68,8 +67,6 @@ namespace BookRentalShopApp
             RefreshData();
             ClearInputs();
         }
-
-
 
         private void BtnSearchMember_Click(object sender, EventArgs e)
         {
@@ -96,7 +93,6 @@ namespace BookRentalShopApp
         #endregion
 
         #region 커스텀 메서드 영역
-
 
         /// <summary>
         /// 데이터 그리드 뷰 새로고침
@@ -130,8 +126,8 @@ namespace BookRentalShopApp
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet(); // DataSet : 가상의 DB (의 객체화)
-                    adapter.Fill(ds, "rentaltbl");
 
+                    adapter.Fill(ds, "rentaltbl");
                     DgvData.DataSource = ds;
                     DgvData.DataMember = "rentaltbl";
                 }
@@ -229,7 +225,6 @@ namespace BookRentalShopApp
                         cmd.Parameters.Add(pIdx);
                     }
 
-
                     var result = cmd.ExecuteNonQuery();
 
                     if (result == 1)
@@ -252,16 +247,19 @@ namespace BookRentalShopApp
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        /// <summary>
+        /// 입력 텍스트박스 초기화
+        /// </summary>
         private void ClearInputs()
         {
             selMemberIdx = selBookIdx = 0;
             selMemberName = selBookName = "";
 
-            TxtIdx.ReadOnly = true;
+            TxtIdx.Text = TxtMemberName.Text 
+                = TxtBookNames.Text 
+                = TxtReturnDate.Text = "";
 
-            TxtIdx.Text = TxtMemberName.Text = TxtBookNames.Text = "";
             DtpRentalDate.Value = DateTime.Now;    // 오늘날짜로 초기화
-            TxtReturnDate.Text = "";
             CboRentalState.SelectedIndex = -1;
 
             BtnSearchBook.Enabled = BtnSearchMember.Enabled = true;
@@ -288,6 +286,9 @@ namespace BookRentalShopApp
             return true;
         }
 
+        /// <summary>
+        /// 대여상태 콤보박스 초기화
+        /// </summary>
         private void InitCboData()
         {
             try
@@ -303,7 +304,10 @@ namespace BookRentalShopApp
             }
             catch { }    //메시지 박스 필요없음
         }
-
+        /// <summary>
+        /// 선택된 데이터를 텍스트 박스에 출력
+        /// </summary>
+        /// <param name="selData"></param>
         private void AsignToControls(DataGridViewRow selData)
         {
             TxtIdx.Text = selData.Cells[0].Value.ToString();
@@ -316,13 +320,8 @@ namespace BookRentalShopApp
             DtpRentalDate.Value = (DateTime)selData.Cells[5].Value;
             TxtReturnDate.Text = selData.Cells[6].Value == null ? "" : selData.Cells[6].Value.ToString();
             CboRentalState.SelectedValue = selData.Cells[7].Value;
-
-
         }
 
-
         #endregion
-
-
     }
 }

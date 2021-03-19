@@ -119,6 +119,7 @@ namespace BookRentalShopApp
                 MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;    // 로드될때 선택된 데이터가 없도록
         }
         /// <summary>
         /// 데이터 그리드 뷰 새로고침
@@ -146,8 +147,8 @@ namespace BookRentalShopApp
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet(); // DataSet : 가상의 DB (의 객체화)
-                    adapter.Fill(ds, "bookstbl");
 
+                    adapter.Fill(ds, "bookstbl");
                     DgvData.DataSource = ds;
                     DgvData.DataMember = "bookstbl";
                 }
@@ -196,7 +197,7 @@ namespace BookRentalShopApp
 
                     var query = "";
 
-                    if (IsNew == true)
+                    if (IsNew == true)  // INSERT
                     {
                         query = @"INSERT INTO dbo.bookstbl
                                         (Author
@@ -289,6 +290,10 @@ namespace BookRentalShopApp
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// 입력 텍스트박스 초기화
+        /// </summary>
         private void ClearInputs()
         {
             TxtIdx.Text = TxtAuthor.Text
@@ -322,6 +327,9 @@ namespace BookRentalShopApp
             return true;
         }
 
+        /// <summary>
+        /// 도서 장르 콤보박스 초기화
+        /// </summary>
         private void InitCboData()
         {
             try
@@ -332,6 +340,7 @@ namespace BookRentalShopApp
 
                     var query = @"SELECT Division, Names 
                                     FROM dbo.divtbl";
+
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader(); // query의 결과가 넘어옴
@@ -351,19 +360,20 @@ namespace BookRentalShopApp
             catch {}    //메시지 박스 필요없음
         }
 
+        /// <summary>
+        /// 선택된 데이터 정보를 텍스트박스에 출력
+        /// </summary>
+        /// <param name="selData"></param>
         private void AsignToControls(DataGridViewRow selData)
         {
             TxtIdx.Text = selData.Cells[0].Value.ToString();
             TxtAuthor.Text = selData.Cells[1].Value.ToString();
             CboDivision.SelectedValue = selData.Cells[2].Value; // B001 = B001
-            // selData.Cells[3] = b.division
             TxtNames.Text = selData.Cells[4].Value.ToString();
-            //ReleaseDate
             DtpReleaseDate.Value = (DateTime)selData.Cells[5].Value;
             TxtISBN.Text = selData.Cells[6].Value.ToString();
             TxtPrice.Text = selData.Cells[7].Value.ToString();
             TxtDescriptions.Text = selData.Cells[8].Value.ToString();
-
         }
 
         #endregion

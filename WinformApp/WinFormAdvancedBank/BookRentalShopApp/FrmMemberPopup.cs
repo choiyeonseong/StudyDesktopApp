@@ -11,8 +11,8 @@ namespace BookRentalShopApp
     {
         #region 전역변수 영역
 
-        public int SelIdx { get; set; }
-        public string SelName { get; set; }
+        public int SelIdx { get; set; }     // 선택된 데이터의 인덱스
+        public string SelName { get; set; } // 선택된 데이터의 이름
 
         #endregion
 
@@ -25,10 +25,6 @@ namespace BookRentalShopApp
         private void FrmDivCode_Load(object sender, EventArgs e)
         {
             RefreshData();
-        }
-        private void FrmDivCode_Resize(object sender, EventArgs e)
-        {
-           
         }
 
         private void BtnSelect_Click(object sender, EventArgs e)
@@ -89,8 +85,7 @@ namespace BookRentalShopApp
                 MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;    // 로드될때 선택된 데이터가 없도록
         }
 
         #endregion

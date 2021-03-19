@@ -86,7 +86,6 @@ namespace BookRentalShopApp
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "회원 리스트";
             this.Load += new System.EventHandler(this.FrmDivCode_Load);
-            this.Resize += new System.EventHandler(this.FrmDivCode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
             this.ResumeLayout(false);
 

@@ -11,8 +11,8 @@ namespace BookRentalShopApp
     public partial class FrmBooksPopup : MetroForm
     {
         #region 전역변수 영역
-        public int SelIdx { get; set; }
-        public string SelName { get; set; }
+        public int SelIdx { get; set; }     // 선택된 데이터의 인덱스
+        public string SelName { get; set; } // 선택된 데이터의 이름
 
         #endregion
 
@@ -25,14 +25,6 @@ namespace BookRentalShopApp
         private void FrmDivCode_Load(object sender, EventArgs e)
         {
             RefreshData();  // 테이블 조회
-        }
-        private void FrmDivCode_Resize(object sender, EventArgs e)
-        {
-            
-        }
-        private void DgvData_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-        
         }
         private void BtnSelect_Click(object sender, EventArgs e)
         {

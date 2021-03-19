@@ -86,10 +86,8 @@ namespace BookRentalShopApp
 
                     SqlCommand cmd = new SqlCommand();
 
-                    var query = "";
-
-                    query = "DELETE FROM [dbo].[divtbl] " +
-                            " WHERE [Division] = @Division";
+                    var query = "DELETE FROM [dbo].[divtbl] " +
+                                     " WHERE [Division] = @Division";
 
                     cmd.Connection = conn;
                     cmd.CommandText = query;    // == SqlCommand cmd = new SqlCommand(conn, query);
@@ -136,11 +134,10 @@ namespace BookRentalShopApp
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "divtbl");
 
+                    adapter.Fill(ds, "divtbl");
                     DgvData.DataSource = ds;
                     DgvData.DataMember = "divtbl";
-
                 }
             }
             catch (Exception ex)
@@ -148,6 +145,8 @@ namespace BookRentalShopApp
                 MetroMessageBox.Show(this, $"예외발생 : {ex.Message}", "오류",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            DgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;    // 로드될때 선택된 데이터가 없도록
         }
         /// <summary>
         /// 입력 처리 프로세스
@@ -211,6 +210,9 @@ namespace BookRentalShopApp
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        /// <summary>
+        /// 입력 텍스트박스 초기화
+        /// </summary>
         private void ClearInputs()
         {
             TxtDivision.Text = TxtNames.Text = "";

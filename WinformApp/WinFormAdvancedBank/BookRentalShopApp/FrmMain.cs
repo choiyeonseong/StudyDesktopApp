@@ -25,11 +25,6 @@ namespace BookRentalShopApp
             LblMyName.Text = $"{frm.MyName} 님 접속";
         }
 
-        private void MnuExit_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e) // 사용자 편의를 위해
         {
             if (MetroMessageBox.Show(this, "종료하시겠습니까?", "종료",
@@ -42,26 +37,6 @@ namespace BookRentalShopApp
             {
                 e.Cancel = true;    // 프로그램 종료 안함
             }
-        }
-
-        /// <summary>
-        /// MDI Child Form 생성
-        /// </summary>
-        /// <param name="form"></param>
-        /// <param name="strTitle"></param>
-        private void InitChildForm(Form form, string strTitle)
-        {
-            form.Text = strTitle;
-            form.Dock = DockStyle.Fill;
-            form.MdiParent = this;   // this = FrmMain
-            form.FormBorderStyle = FormBorderStyle.None;
-
-            // TODO : 사이즈 조절
-            form.Width = 1875;//this.ClientSize.Width - 10;
-            form.Height = 930;//this.Height - menuStrip1.Height;
-
-            form.Show();
-            form.WindowState = FormWindowState.Normal;
         }
 
         private void MnuDivCode_Click(object sender, EventArgs e)
@@ -88,5 +63,29 @@ namespace BookRentalShopApp
             InitChildForm(frm, "대여 관리");
         }
 
+        private void MnuExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        /// <summary>
+        /// MDI Child Form 생성
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="strTitle"></param>
+        private void InitChildForm(Form form, string strTitle)
+        {
+            form.Text = strTitle;
+            form.Dock = DockStyle.Fill;
+            form.MdiParent = this;   // this = FrmMain
+            form.FormBorderStyle = FormBorderStyle.None;
+
+            // TODO : 사이즈 조절
+            form.Width = 1875;//this.ClientSize.Width - 10;
+            form.Height = 930;//this.Height - menuStrip1.Height;
+
+            form.Show();
+            form.WindowState = FormWindowState.Normal;
+        }
     }
 }
