@@ -32,6 +32,7 @@ namespace BookRentalShopApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRental));
             this.DgvData = new System.Windows.Forms.DataGridView();
             this.GrbDetail = new System.Windows.Forms.GroupBox();
+            this.TxtReturnDate = new MetroFramework.Controls.MetroTextBox();
             this.CboRentalState = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.BtnSearchBook = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace BookRentalShopApp
             this.TxtIdx = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.TxtReturnDate = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.GrbDetail.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,39 @@ namespace BookRentalShopApp
             this.GrbDetail.TabIndex = 1;
             this.GrbDetail.TabStop = false;
             this.GrbDetail.Text = "상세";
+            // 
+            // TxtReturnDate
+            // 
+            // 
+            // 
+            // 
+            this.TxtReturnDate.CustomButton.Image = null;
+            this.TxtReturnDate.CustomButton.Location = new System.Drawing.Point(158, 1);
+            this.TxtReturnDate.CustomButton.Name = "";
+            this.TxtReturnDate.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TxtReturnDate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TxtReturnDate.CustomButton.TabIndex = 1;
+            this.TxtReturnDate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TxtReturnDate.CustomButton.UseSelectable = true;
+            this.TxtReturnDate.CustomButton.Visible = false;
+            this.TxtReturnDate.Lines = new string[0];
+            this.TxtReturnDate.Location = new System.Drawing.Point(93, 160);
+            this.TxtReturnDate.MaxLength = 32767;
+            this.TxtReturnDate.Name = "TxtReturnDate";
+            this.TxtReturnDate.PasswordChar = '\0';
+            this.TxtReturnDate.PromptText = "반납일";
+            this.TxtReturnDate.ReadOnly = true;
+            this.TxtReturnDate.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TxtReturnDate.SelectedText = "";
+            this.TxtReturnDate.SelectionLength = 0;
+            this.TxtReturnDate.SelectionStart = 0;
+            this.TxtReturnDate.ShortcutsEnabled = true;
+            this.TxtReturnDate.Size = new System.Drawing.Size(180, 23);
+            this.TxtReturnDate.TabIndex = 17;
+            this.TxtReturnDate.UseSelectable = true;
+            this.TxtReturnDate.WaterMark = "반납일";
+            this.TxtReturnDate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TxtReturnDate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // CboRentalState
             // 
@@ -310,39 +343,6 @@ namespace BookRentalShopApp
             this.metroLabel1.Size = new System.Drawing.Size(44, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "순번 :";
-            // 
-            // TxtReturnDate
-            // 
-            // 
-            // 
-            // 
-            this.TxtReturnDate.CustomButton.Image = null;
-            this.TxtReturnDate.CustomButton.Location = new System.Drawing.Point(158, 1);
-            this.TxtReturnDate.CustomButton.Name = "";
-            this.TxtReturnDate.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TxtReturnDate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TxtReturnDate.CustomButton.TabIndex = 1;
-            this.TxtReturnDate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TxtReturnDate.CustomButton.UseSelectable = true;
-            this.TxtReturnDate.CustomButton.Visible = false;
-            this.TxtReturnDate.Lines = new string[0];
-            this.TxtReturnDate.Location = new System.Drawing.Point(93, 160);
-            this.TxtReturnDate.MaxLength = 32767;
-            this.TxtReturnDate.Name = "TxtReturnDate";
-            this.TxtReturnDate.PasswordChar = '\0';
-            this.TxtReturnDate.PromptText = "반납일";
-            this.TxtReturnDate.ReadOnly = true;
-            this.TxtReturnDate.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TxtReturnDate.SelectedText = "";
-            this.TxtReturnDate.SelectionLength = 0;
-            this.TxtReturnDate.SelectionStart = 0;
-            this.TxtReturnDate.ShortcutsEnabled = true;
-            this.TxtReturnDate.Size = new System.Drawing.Size(180, 23);
-            this.TxtReturnDate.TabIndex = 17;
-            this.TxtReturnDate.UseSelectable = true;
-            this.TxtReturnDate.WaterMark = "반납일";
-            this.TxtReturnDate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TxtReturnDate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // FrmRental
             // 
