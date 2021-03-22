@@ -11,7 +11,14 @@
       Background="AntiqueWhite"
       Initialized="Page_Initialized">
 
-    <Grid Margin="10">
+    <!--<Page.Resources>
+        <ResourceDictionary>
+            <Button x:Key="button" Content="Hello!!"/>
+            <SolidColorBrush x:Key="accentBrush" Color="PaleVioletRed"/>
+        </ResourceDictionary>
+    </Page.Resources>-->
+
+    <Grid Margin="10" Background="{StaticResource background}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
@@ -29,8 +36,9 @@
         <TextBox x:Name="TxtMessage" Grid.Row="1" Grid.Column="1" Margin="10" TextWrapping="Wrap"/>
 
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="BtnSend" Content="Send"  Width="100" Margin="5" FontSize="14"/>
-            <Button x:Name="BtnCancel" Content="Cancel" Width="100" Margin="5" FontSize="14"/>
+            <Button Content="test" Width="100" Margin="5" FontSize="14" Background="{StaticResource accentBrush}" />
+            <Button x:Name="BtnSend" Content="Send"  Width="100" Margin="5" FontSize="14" Background="{StaticResource MahApps.Brushes.Accent2}"/>
+            <Button x:Name="BtnCancel" Content="Cancel" Width="100" Margin="5" FontSize="14" Background="{StaticResource MahApps.Brushes.Accent3}" />
         </StackPanel>
     </Grid>
 </Page>

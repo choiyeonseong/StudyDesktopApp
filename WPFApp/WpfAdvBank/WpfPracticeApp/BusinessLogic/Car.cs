@@ -7,14 +7,52 @@ using System.Windows.Media;
 
 namespace WpfPracticeApp.BusinessLogic
 {
-    public class Car
+    public class Car : Notifier
     {
-        public double Speed { get; set; }   // 속성(프로퍼티) : 대문자로 시작 
-        public Color MainColor { get; set; }  // 키워드는 중복사용 안하는게 좋음
-        public Human Driver { get; set; }
+        //public double Speed { get; set; } // 아래 것과 같음
+        private double speed;
+        public double Speed
+        {
+            get { return speed; }
+            set
+            {
+                if (value > 350)
+                {
+                    speed = 350;
+                }
+                else
+                {
+                    speed = value;
+                }
+                OnPropertyChanged("Speed"); // 속성값 변경된 것을 프로그램에게 알려줌
+            }
+        }
+
+        private Color mainColor;
+        public Color MainColor
+        {
+            get { return mainColor; }
+            set
+            {
+                mainColor = value;
+                OnPropertyChanged("MainColor");
+            }
+        }  // 키워드는 중복사용 안하는게 좋음
+
+        private Human driver;
+        public Human Driver
+        {
+            get { return driver; }
+            set
+            {
+                driver = value;
+                OnPropertyChanged("Driver");
+            }
+        }
     }
     public class Human
     {
+        public string Name { get; set; }
         public bool HasDriveLicense { get; set; }
     }
 }

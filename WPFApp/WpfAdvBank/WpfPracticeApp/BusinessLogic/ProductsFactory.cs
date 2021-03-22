@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfPracticeApp
+namespace WpfPracticeApp.BusinessLogic
 {
     public class ProductsFactory
     {
@@ -46,7 +46,7 @@ namespace WpfPracticeApp
                 Title = pickRandom(titles),
                 Color = pickRandom(colors),
                 Price = Math.Round(300M + (decimal)r.NextDouble() * 1700M, 2),
-                Reference = "BK"+r.Next(100000).ToString("d8")
+                Reference = "BK" + r.Next(100000).ToString("d8")
             };
         }
         static T pickRandom<T>(T[] array)
@@ -105,6 +105,5 @@ namespace WpfPracticeApp
                 OnPropertyChanged("Reference");
             }
         }
-
     }
 }

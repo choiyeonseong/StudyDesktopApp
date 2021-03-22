@@ -23,24 +23,37 @@
         <Button x:Name="BtnProducts" 
                 Grid.Row="1" Grid.Column="0" 
                 Content="Products" 
-                FontSize="20" 
-                Margin="15,5" 
+                FontSize="20" Margin="15,5" 
                 Background="Bisque"
                 Click="BtnProducts_Click"/>
+        
         <Button x:Name="BtnLiveSupport"
                 Grid.Row="1" Grid.Column="1" 
-                Content="Live Support" 
-                FontSize="20" 
-                Margin="15,5"
-                Background="Bisque" 
+                Content="Live Support"
+                FontSize="20" Margin="15,5"
+               Background="{StaticResource accentBrush}"
                 Click="BtnLiveSupport_Click"/>
+        
         <Button x:Name="BtnEmailSupport"
                 Grid.Row="1" Grid.Column="2"
                 Content="Email Support" 
-                FontSize="20"
-                Margin="15,5" 
+                FontSize="20" Margin="15,5" 
                 Background="Bisque"
-                Click="BtnEmailSupport_Click"/>
+                Click="BtnEmailSupport_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle Fill="{TemplateBinding Background}" 
+                                   StrokeThickness="3" Stroke="BurlyWood"
+                                   RadiusX="31.602" RadiusY="31.602"/>
+                        <Label Content="{TemplateBinding Content}" 
+                               VerticalContentAlignment="Center" 
+                               HorizontalContentAlignment="Center"
+                               Foreground="RosyBrown"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" 
                Content="Adventure Works" 

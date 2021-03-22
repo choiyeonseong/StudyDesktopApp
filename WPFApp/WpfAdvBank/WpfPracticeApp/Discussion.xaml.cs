@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfPracticeApp.BusinessLogic;
 
 namespace WpfPracticeApp
 {
@@ -23,6 +24,13 @@ namespace WpfPracticeApp
         public Discussion()
         {
             InitializeComponent();
+        }
+
+        private void Page_Initialized(object sender, EventArgs e)
+        {
+            // runtime할때 데이터를 바인딩 -> 동적 바인딩
+            Talk talk = new Talk();
+            this.DataContext = talk;
         }
     }
 }
