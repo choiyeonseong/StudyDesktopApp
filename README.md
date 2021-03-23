@@ -36,3 +36,7 @@ C# 데스크톱 앱 개발 학습 리포지토리
     ![ChooseBook](WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/BookPopup.png) [코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmBooksPopup.cs)
 
 -----
+
+PhotoResistor
+
+![실행화면](ref_image/PhotoSensor.png)
