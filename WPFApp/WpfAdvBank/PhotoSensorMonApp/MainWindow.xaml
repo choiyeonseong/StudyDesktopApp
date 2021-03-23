@@ -64,7 +64,7 @@
                        FontSize="16"
                        Style="{StaticResource MahApps.Styles.Control.WindowCommands}"/>
 
-                <Label Grid.Row="1" Grid.Column="0" Content="{Binding}" Width="100" Height="30" Margin="128,117,128,167" HorizontalContentAlignment="Center"></Label>
+                <Label Grid.Row="1" Grid.Column="0" Content="{Binding}" Width="100" Height="30" Margin="62,120,62,164" HorizontalContentAlignment="Center"></Label>
 
                 <lvc:AngularGauge 
                     x:Name="ChtRealTimeSensor"
