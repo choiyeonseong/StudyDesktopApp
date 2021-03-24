@@ -10,13 +10,20 @@
     <Window.Resources>
         <!-- 정적 바인딩(local) -->
         <local:PersonList x:Key="PersonListData"/>
-        
+        <local:NameConverter x:Key="MyNameConverter"/>
+
         <DataTemplate x:Key="PersonListBoxTemplate">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{Binding FirstName}"/>
                 <TextBlock Text="{Binding LastName}" Margin="5,0"/>
             </StackPanel>
         </DataTemplate>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Silver"/>
+        </Style>
     </Window.Resources>
     
     <StackPanel HorizontalAlignment="Center">
@@ -29,19 +36,34 @@
             </Button.BitmapEffect>
         </Button>-->
 
-        <TextBlock FontSize="18" FontWeight="Bold" FontFamily="NanumGothic" Margin="10"
+        <TextBlock FontSize="18" FontWeight="Bold" FontFamily="NanumGothic" Margin="10" Background="White"
                    Text="멀티 바인딩 샘플"/>
         <ListBox x:Name="LsbPerson" Width="200"
                  IsSynchronizedWithCurrentItem="True"
                  ItemsSource="{Binding Source={StaticResource PersonListData}}"
-                 ItemTemplate="{StaticResource PersonListBoxTemplate}"
-                 SelectionChanged="ListBox_SelectionChanged">
+                 ItemTemplate="{StaticResource PersonListBoxTemplate}">
         </ListBox>
-        
-        <TextBlock Text="Normal Format" Margin="0,10,0,0"/>
-        <TextBlock x:Name="TxtNormal" Background="Silver" ></TextBlock>
-        
-        <TextBlock Text="Last Name, Firt Name Format" Margin="0,10,0,0"/>
-        <TextBlock x:Name="TxtLastFirst" Background="Silver"></TextBlock>
+
+        <TextBlock Text="Normal Format" Margin="0,10,0,0" Background="White"/>
+        <TextBlock x:Name="TxtNormal" Background="Silver" DataContext="{StaticResource PersonListData}">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource MyNameConverter}"
+                              ConverterParameter="FormatNormal">
+                    <Binding Path="FirstName"/>
+                    <Binding Path="LastName"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+
+        <TextBlock Text="Last Name, Firt Name Format" Margin="0,10,0,0" Background="White"/>
+        <TextBlock x:Name="TxtLastFirst" Background="Silver" DataContext="{StaticResource PersonListData}">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource MyNameConverter}"
+                              ConverterParameter="FormatLastFirst">
+                    <Binding Path="FirstName"/>
+                    <Binding Path="LastName"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
     </StackPanel>
 </Window>
