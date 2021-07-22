@@ -1,46 +1,43 @@
 # StudyDesktopApp
 C# 데스크톱 앱 개발 학습 리포지토리
+- [책 대여 관리 앱](#책-대여-관리-앱)
+- [포토 레지스터](#photoresistor)
 
-## Winform 책 대여 관리
+----------
 
-1. 로그인 폼 
+## 책 대여 관리 앱
 
-<img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/LoginForm.png" width="80%" height="80%"></img>
-[코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmLogin.cs)
+1. [로그인 폼](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmLogin.cs) 
 
-2. 도서 분류 코드 관리 
-  - Insert, Update, Delete
+    <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/LoginForm.png" width="80%" height="80%"></img>
+
+2. [도서 분류 코드 관리](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmDivCode.cs)
+    - 구분 코드에 대한 CRUD 구현
     
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/DivForm.png" width="80%" height="80%"></img>
-    [코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmDivCode.cs)
 
-3. 도서 관리 
-  - Insert, Update, Delete
+3. [도서 관리](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmBooks.cs)
+    - 도서 정보에 대한 CRUD 구현
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/BookForm.png" width="80%" height="80%"></img>
-    [코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmBooks.cs)
-
-4. 회원 관리 
-  - Insert, Update, Delete
+    
+4. [회원 관리](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmMember.cs)
+    - 회원 정보에 대한 CRUD 구현
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/MemberForm.png" width="80%" height="80%"></img>
-    [코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmMember.cs)
-
-5. 도서 대여 관리 
-  - Insert, Update
+    
+5. [도서 대여 관리](WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/RentalForm.png)
+    - 도서 정보와 회원 정보를 결합하여 대여 현황 조회, 추가 기능
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/RentalForm.png" width="80%" height="80%"></img>
-    [코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/RentalForm.png)
 
-  * 대여할 회원 선택
+    * [대여할 회원 선택](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmMemberPopup.cs)
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/MemberPopup.png" width="80%" height="80%"></img>
-    [코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmMemberPopup.cs)
     
-  * 대여할 도서 선택
+    * [대여할 도서 선택](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmBooksPopup.cs)
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/BookPopup.png" width="80%" height="80%"></img>
-    [코드](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmBooksPopup.cs)
 
 -----
 
@@ -48,8 +45,11 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
 <img src="/ref_image/PhotoSensor.png" width="80%" height="80%"></img>
 
-[WPF 디자인](WPFApp/WpfAdvBank/PhotoSensorMonApp/MainWindow.xaml)
-[WPF cs](WPFApp/WpfAdvBank/PhotoSensorMonApp/MainWindow.xaml.cs)
+1. [photo resister monitering](WinformApp/WinFormAdvancedBank/IoTSensorMonApp)
+    - WinForms
+    - 포토 레지스터 : 광의존 저항기(LDR)
+    - 초단위로 센서값을 랜덤으로 생성해서 실시간 값을 그래프로 표시하고 DB에 저장(INSERT)
 
-[WinForm 디자인](WinformApp/WinFormAdvancedBank/IoTSensorMonApp/FrmMain.Designer.cs)
-[WinForm cs](WinformApp/WinFormAdvancedBank/IoTSensorMonApp/FrmMain.cs)
+2. [photo sensor monitering](WPFApp/WpfAdvBank/PhotoSensorMonApp)
+    - WPF
+    - DB에 저장된 센서값을 가져와(SELECT) 실시간으로 모니터링
