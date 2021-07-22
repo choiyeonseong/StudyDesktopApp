@@ -2,7 +2,8 @@
 C# 데스크톱 앱 개발 학습 리포지토리
 - [책 대여 관리 앱](#책-대여-관리-앱)
 - [포토 레지스터](#photoresistor)
-
+- [NLog](#nlog)
+- [SQL Connection](#sqlconnection-클래스)
 ----------
 
 ## 책 대여 관리 앱
@@ -53,3 +54,42 @@ C# 데스크톱 앱 개발 학습 리포지토리
 2. [photo sensor monitering](WPFApp/WpfAdvBank/PhotoSensorMonApp)
     - WPF
     - DB에 저장된 센서값을 가져와(SELECT) 실시간으로 모니터링
+
+---
+
+- <h3>NLog</h3>
+
+```C#
+/* NLog file 형식 지정 */
+
+<targets>
+	<target name="console" xsi:type="ColoredConsole"
+			layout="${date:format=HH\:mm\:ss}| [TID:${threadid}] | ${stacktrace} | ${message}" />
+	<target name="file" xsi:type="File" fileName="${basedir}/Logs/${date:format=yyyyMMdd}.log"
+			layout="[${date}] [TID:${threadid}] [{stacktrace}]: ${message}" />
+</targets>
+```
+
+- <h3>SqlConnection 클래스</h3>
+
+```C#
+/* SqlConnection 클래스로 SQL 서버 접속 */
+List<DataPoint> result = new List<DataPoint>();
+try
+{
+    using (SqlConnection conn = new SqlConnection(connString))
+    {
+        if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
+
+        var query = $@" /* SELECT QUERY */ ";
+
+        SqlCommand cmd = new SqlCommand(query, conn);
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        while (reader.Read())
+        {
+            /* SELECT된 내용 처리 */
+        }
+    }
+
+```
