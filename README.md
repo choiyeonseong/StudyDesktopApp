@@ -88,7 +88,7 @@ try
 
         while (reader.Read())
         {
-            /* SELECT된 내용 처리 */
+            /* SELECT된 데 처리 */
         }
     }
 
