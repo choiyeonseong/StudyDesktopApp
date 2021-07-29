@@ -11,7 +11,29 @@ C# 데스크톱 앱 개발 학습 리포지토리
 1. [로그인 폼](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmLogin.cs) 
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/LoginForm.png" width="80%" height="80%"></img>
+    
+    - 마지막으로 로그인한 시간, IP를 DB에 저장
+    	[GetLocalIp](WinformApp/WinFormAdvancedBank/BookRentalShopApp/Helper/Common.cs)
+    ```C#
+    // IP 주소를 받아오는 메서드
+	internal static string GetLocalIp()
+	{
+	    string localIP = "";
+	    IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+	    foreach (IPAddress ip in host.AddressList)
+	    {
+		if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+		{
+		    localIP = ip.ToString();
+		    break;
+		}
+	    }
 
+	    return localIP;
+	}
+    ```
+	
+	
 2. [도서 분류 코드 관리](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmDivCode.cs)
     - 구분 코드에 대한 CRUD 구현
     
@@ -27,7 +49,7 @@ C# 데스크톱 앱 개발 학습 리포지토리
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/MemberForm.png" width="80%" height="80%"></img>
     
-5. [도서 대여 관리](WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/RentalForm.png)
+5. [도서 대여 관리](WinformApp/WinFormAdvancedBank/BookRentalShopApp/FrmRental.cs)
     - 도서 정보와 회원 정보를 결합하여 대여 현황 조회, 추가 기능
 
     <img src="WinformApp/WinFormAdvancedBank/BookRentalShopApp/ref_images/RentalForm.png" width="80%" height="80%"></img>
@@ -88,8 +110,21 @@ try
 
         while (reader.Read())
         {
-            /* SELECT된 데 처리 */
+            /* SELECT된 데이터 처리 */
         }
     }
+```
 
+- <h3>Sql Injection 방지하기 위한 메서드</h3>
+
+```C#
+/* Sql Injection 방지하기 위해 특수문자를 치환 */
+internal static string ReplaceCmdText(string strSource)
+{
+    var result = strSource.Replace("'", "＇");	// 홑따옴표를 특수문자로 치환
+    result = result.Replace("--", "");		 // --(주석처리) 사용 금지
+    result = result.Replace(";", "");   	 // ; 사용 금지
+
+    return result;
+}
 ```
